@@ -1,0 +1,26 @@
+<h1>Tasks Management Application</h1>
+View <a href="/completed_tasks/">completed tasks</a> <br />
+View <a href="/all_tasks/">all tasks</a>
+
+<form action="/add-task" method="get">
+  <input type="text" name="task" />
+  <button type="submit">Add Task</button>
+</form>
+
+<h1>Search</h1>
+
+<form action="" method="get">
+  <input type="text" name="search" />
+  <button type="submit">Search</button>
+</form>
+
+<h1>Tasks</h1>
+<ol>
+  {% for task in tasks %}
+  <li>
+    {{task.title}} - {{task.created_date}}
+    <a href="/delete-task/{{task.id}}/">Delete</a>
+    <a href="/complete_task/{{task.id}}/">Complete</a>
+  </li>
+  {% endfor %}
+</ol>

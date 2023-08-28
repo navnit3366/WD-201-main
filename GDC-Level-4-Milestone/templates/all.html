@@ -1,0 +1,15 @@
+<h1>Tasks Management Application</h1>
+View <a href="/tasks/">current tasks</a> <br />
+View <a href="/completed_tasks/">completed tasks</a>
+<h1>Current Tasks</h1>
+<ol>
+  {% for task in tasks %}
+  <li>{{task}}</li>
+  {% endfor %}
+</ol>
+<h1>Completed Tasks</h1>
+<ol>
+  {% for task in completed_tasks %}
+  <li>{{task}}</li>
+  {% endfor %}
+</ol>

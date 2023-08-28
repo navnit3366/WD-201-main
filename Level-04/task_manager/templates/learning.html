@@ -1,0 +1,17 @@
+<h1>Tasks</h1>
+<!-- Accessing contents of additional dictionary passed -->
+{{ tasks }}
+<!-- if conditions in DTL -->
+{% if tasks %}
+<h1>Tasks exist</h1>
+{%else %}
+<h1>No tasks</h1>
+{%endif%}
+<!-- Accessing the contents of the request -->
+{{request}} {{ request.GET }}
+<!-- Writing Loops -->
+<ul>
+  {% for task in tasks %}
+  <li>{{task}}</li>
+  {% endfor %}
+</ul>

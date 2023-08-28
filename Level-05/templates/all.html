@@ -1,0 +1,16 @@
+<h1>Tasks Management Application</h1>
+<!-- If preceding slash is missing the href gets appended to the current route -->
+View <a href="/tasks/">current tasks</a> <br />
+View <a href="/completed_tasks/">completed tasks</a>
+<h1>Current Tasks</h1>
+<ol>
+  {% for task in tasks %}
+  <li>{{task.title}} - {{task.created_date}}</li>
+  {% endfor %}
+</ol>
+<h1>Completed Tasks</h1>
+<ol>
+  {% for task in completed_tasks %}
+  <li>{{task.title}} - {{task.created_date}}</li>
+  {% endfor %}
+</ol>

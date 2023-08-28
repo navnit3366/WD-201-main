@@ -1,0 +1,11 @@
+<h1>Tasks Management Application</h1>
+View <a href="/tasks/">current tasks</a> <br />
+View <a href="/completed_tasks/">completed tasks</a> <br />
+View <a href="/all_tasks/">all tasks</a>
+
+<h1>Update a task</h1>
+<form action="" method="post">
+  <!-- <input type="text" name="task" /> -->
+  {{form.as_p}} {% csrf_token %}
+  <button type="submit">Add Task</button>
+</form>

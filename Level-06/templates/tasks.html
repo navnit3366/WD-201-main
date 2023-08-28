@@ -1,0 +1,33 @@
+<h1>Tasks Management Application</h1>
+View <a href="/tasks/">current tasks</a> <br />
+View <a href="/completed_tasks/">completed tasks</a> <br />
+View <a href="/all_tasks/">all tasks</a>
+
+<h1>Search</h1>
+
+<form action="" method="get">
+  <input type="text" name="search" />
+  <button type="submit">Search</button>
+</form>
+
+<h1>Tasks</h1>
+<ol>
+  {% for task in tasks %}
+  <li>
+    {{task.title}} - {{task.created_date}}
+    <a href="/delete-task/{{task.id}}/">Delete</a>
+    <a href="/complete_task/{{task.id}}/">Complete</a>
+    <a href="/update-task/{{task.id}}/">Update</a>
+    <a href="/detail-task/{{task.id}}/">Details of Task</a>
+  </li>
+  {% endfor %}
+</ol>
+
+<ul>
+  <!-- page_range = total number of objects / paginate_by -->
+  {% for page in paginator.page_range %}
+  <li>
+    <a href="?page={{ page }}&search={{request.GET.search}}">{{page}}</a>
+  </li>
+  {% endfor %}
+</ul>
